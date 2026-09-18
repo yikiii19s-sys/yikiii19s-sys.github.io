@@ -1,0 +1,5 @@
+'use strict';
+const titles=['项目封面','项目介绍','内容方向','制作流程','运镜案例','我的贡献','结尾'];
+let current=1;const page=document.querySelector('#page'),select=document.querySelector('#pages');
+function show(n){current=Math.max(1,Math.min(7,n));page.src=`assets/shizhen-deck/${current}-web.webp`;page.alt=`第${current}页：${titles[current-1]}`;select.value=String(current);document.querySelector('#original').href=page.src;document.querySelector('#prev').disabled=current===1;document.querySelector('#next').disabled=current===7;document.querySelector('#status').textContent=`${current} / 7 · ${titles[current-1]}`;history.replaceState(null,'',`#page-${current}`);}
+document.querySelector('#prev').onclick=()=>show(current-1);document.querySelector('#next').onclick=()=>show(current+1);select.onchange=()=>show(Number(select.value));document.addEventListener('keydown',e=>{if(e.target.matches('select,button,input,textarea'))return;if(e.key==='ArrowRight'){e.preventDefault();show(current+1)}if(e.key==='ArrowLeft'){e.preventDefault();show(current-1)}});show(Number(location.hash.replace('#page-',''))||1);

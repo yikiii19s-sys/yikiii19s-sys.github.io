@@ -1,0 +1,16 @@
+(()=>{'use strict';
+const links=[...document.querySelectorAll('a[href]')].filter(a=>/\.(png|jpe?g|webp)(?:[?#].*)?$/i.test(a.getAttribute('href')));
+if(typeof HTMLDialogElement!=='undefined' && links.length){
+ const dialog=document.createElement('dialog');dialog.className='image-viewer';dialog.setAttribute('aria-label','作品图片查看器');
+ dialog.innerHTML='<div class="viewer-top"><p id="viewer-label"></p><button type="button" class="viewer-close" aria-label="关闭图片查看器">关闭 ×</button></div><div class="viewer-stage"><img alt=""></div><div class="viewer-bottom"><button type="button" class="viewer-prev" aria-label="上一张图片">← 上一张</button><span class="viewer-status" aria-live="polite"></span><button type="button" class="viewer-next" aria-label="下一张图片">下一张 →</button><a class="viewer-original" target="_blank" rel="noopener">原尺寸查看 ↗</a></div>';
+ document.body.append(dialog);let group=[],index=0,origin=null,oldOverflow='';
+ const img=dialog.querySelector('img'),title=dialog.querySelector('#viewer-label'),prev=dialog.querySelector('.viewer-prev'),next=dialog.querySelector('.viewer-next');
+ function show(){const a=group[index];img.src=a.href;img.alt=a.querySelector('img')?.alt||a.getAttribute('aria-label')||'作品原图';title.textContent=img.alt;dialog.querySelector('.viewer-status').textContent=(index+1)+' / '+group.length;dialog.querySelector('.viewer-original').href=a.href;prev.disabled=index===0;next.disabled=index===group.length-1;}
+ links.forEach(a=>a.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;const region=a.closest('.project')||document.querySelector('main')||document.body;const seen=new Set();group=links.filter(x=>region.contains(x)&&!seen.has(x.href)&&seen.add(x.href));index=group.findIndex(x=>x.href===a.href);if(index<0)return;e.preventDefault();origin=a;show();oldOverflow=document.body.style.overflow;document.body.style.overflow='hidden';dialog.showModal();dialog.querySelector('.viewer-close').focus();}));
+ prev.addEventListener('click',()=>{if(index>0){index--;show()}});next.addEventListener('click',()=>{if(index<group.length-1){index++;show()}});dialog.querySelector('.viewer-close').addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();(e.key==='ArrowLeft'?prev:next).click()}});dialog.addEventListener('close',()=>{document.body.style.overflow=oldOverflow;img.removeAttribute('src');origin?.focus({preventScroll:true})});
+}
+const chapters=[...document.querySelectorAll('.project[id],#about')],nav=[...document.querySelectorAll('.project-menu a')];let pending=false;
+function locate(){pending=false;let active=null;for(const section of chapters){const rect=section.getBoundingClientRect();if(rect.top<=150&&rect.bottom>100)active=section.id}nav.forEach(a=>{if(a.hash==='#'+active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}
+if(chapters.length){window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(locate)}},{passive:true});window.addEventListener('resize',locate);locate()}
+})();

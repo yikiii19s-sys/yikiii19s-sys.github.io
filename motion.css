@@ -1,0 +1,25 @@
+:root{--cover-drift:0px;--copy-drift:0px}
+.motion-toggle{display:block;margin-top:24px;padding:10px 14px;min-height:44px;border:1px solid #babeb5;background:transparent;color:#485850;font-family:inherit;font-size:12px;line-height:1.6;cursor:pointer;border-radius:2px}
+.motion-toggle:disabled{cursor:default;opacity:.75}
+.home-index a{transition:translate .25s ease,border-color .25s ease}
+.feed-grid article{transition:transform .25s ease,background .25s ease,color .25s ease}
+.home-scroll span,.next b{transition:translate .3s ease}
+@media(min-width:901px) and (pointer:fine){
+  .home-image{object-position:center calc(24% + var(--cover-drift))}
+  .home-copy{transform:translateY(var(--copy-drift))}
+}
+@media(hover:hover) and (pointer:fine){
+  .home-index a:hover{translate:0 -4px}
+  .home-scroll:hover span{translate:3px 3px}
+  .next:hover b{translate:5px 0}
+}
+.motion-off{scroll-behavior:auto}
+.motion-off *,.motion-off *:before,.motion-off *:after{animation:none!important;transition:none!important}
+.motion-off .home-copy{transform:none}
+.motion-off .home-index a,.motion-off .home-scroll span,.motion-off .next b{translate:none}
+.motion-off .hero-media img,.motion-off .hero-media:hover img,.motion-off .feed-grid article:hover{transform:none}
+@media(prefers-reduced-motion:reduce){
+  .home-copy{transform:none!important}
+  .home-index a,.home-scroll span,.next b{translate:none!important}
+  .hero-media img,.hero-media:hover img,.feed-grid article:hover{transform:none!important}
+}

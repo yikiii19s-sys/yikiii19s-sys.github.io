@@ -1,0 +1,21 @@
+{
+  "hero": "PDF extracted artwork (page 1/3 world scene)",
+  "culture": [
+    "artifact_zongmu from hero crop",
+    "artifact_tree from hero crop",
+    "artifact_ritual from page 2 artwork",
+    "culture_visual_01 full page 2 artwork",
+    "archive_world from hero crop"
+  ],
+  "characters": {
+    "group": "page 4 clean group render",
+    "individual_pngs": "cropped from group render; not transparent",
+    "board_reference": "user-added five-frequency board",
+    "panel_refs": "cropped vertical panels from board"
+  },
+  "experience": [
+    "page 6 normal blindbox art",
+    "page 6 secret blindbox art",
+    "page 7 museum night scene"
+  ]
+}

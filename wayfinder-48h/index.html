@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#9adcf2" />
+    <meta name="description" content="WAYFINDER / 48H — 可探索的旅行创意与 3D 交互原型。" />
+    <title>WAYFINDER / 48H — 3D 交互原型</title>
+    <script type="module" crossorigin src="index-DCVm_g5C.js"></script>
+    <link rel="stylesheet" crossorigin href="index-DYw9gePx.css" />
+    <style>
+      .wayfinder-loading{min-height:100svh;display:grid;place-content:center;gap:14px;padding:8vw;background:#e7f3f7;color:#25445a;text-align:center;font:16px/1.7 system-ui,sans-serif}
+      .wayfinder-loading strong{font:400 clamp(32px,5vw,62px)/1.1 Georgia,serif;letter-spacing:.08em}
+      .wayfinder-loading p{max-width:620px;margin:auto}
+    </style>
+  </head>
+  <body>
+    <div id="root"><div class="wayfinder-loading" id="wayfinderLoading"><strong>WAYFINDER / 48H</strong><p id="wayfinderLoadingText">正在载入 3D 旅行世界，请稍候……</p></div></div>
+    <script>
+      (function(){
+        var note=document.getElementById("wayfinderLoadingText");
+        if(location.protocol==="file:"){
+          note.textContent="浏览器限制直接打开本地 3D 模块。请将此文件夹部署到 HTTPS 网站后再访问。";
+        }else{
+          setTimeout(function(){
+            if(document.getElementById("wayfinderLoading")) note.textContent="加载时间较长。请确认模型文件已完整解压，并保持此页面打开；若仍无进展，请刷新重试。";
+          },20000);
+        }
+      })();
+    </script>
+  </body>
+</html>

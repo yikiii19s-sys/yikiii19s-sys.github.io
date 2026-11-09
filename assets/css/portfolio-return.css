@@ -1,0 +1,10 @@
+.portfolio-return.portfolio-return{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 14px;border:1px solid #d5dbe0;border-radius:999px;background:#f3f6f8;color:#263943;font:600 12px/1.2 "Microsoft YaHei",sans-serif;letter-spacing:.02em;white-space:nowrap;text-decoration:none;box-shadow:0 4px 15px #1113}
+.portfolio-return.portfolio-return:hover,.portfolio-return.portfolio-return:focus-visible{background:#dceaf2;color:#172c3a;border-color:#9eb7c6}
+.portfolio-return.portfolio-return:focus-visible{outline:2px solid #355c73;outline-offset:3px}
+/* Shared top-left placement, just below each project's header. */
+.portfolio-return.portfolio-return-corner{
+ position:fixed!important;inset:72px auto auto 24px!important;z-index:260;
+}
+@media(max-width:640px){
+ .portfolio-return.portfolio-return-corner{inset:66px auto auto 14px!important}
+}

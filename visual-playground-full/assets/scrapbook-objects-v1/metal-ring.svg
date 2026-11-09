@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="58" viewBox="0 0 124 58">
+  <defs>
+    <linearGradient id="metal" x1="0" x2="1">
+      <stop offset="0" stop-color="#30383e"/>
+      <stop offset=".12" stop-color="#8f9aa2"/>
+      <stop offset=".28" stop-color="#ffffff"/>
+      <stop offset=".42" stop-color="#9ca8ae"/>
+      <stop offset=".58" stop-color="#f9fcfd"/>
+      <stop offset=".76" stop-color="#68747b"/>
+      <stop offset=".9" stop-color="#edf2f4"/>
+      <stop offset="1" stop-color="#353d42"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-50%" width="160%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.2" result="b"/>
+      <feOffset in="b" dy="4" result="o"/>
+      <feColorMatrix in="o" values="0 0 0 0 0.12 0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 .5 0"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" fill="none" stroke-linecap="round">
+    <path d="M19 30C20 12 42 7 62 7s42 5 43 23" stroke="#2e353a" stroke-width="12"/>
+    <path d="M19 28C20 12 42 9 62 9s42 3 43 19" stroke="url(#metal)" stroke-width="8"/>
+    <path d="M19 31v12M105 31v12" stroke="#655d55" stroke-width="10"/>
+    <path d="M19 30v12M105 30v12" stroke="url(#metal)" stroke-width="6"/>
+    <path d="M30 18c14-9 49-9 64 0" stroke="#fff" stroke-opacity=".8" stroke-width="2"/>
+  </g>
+</svg>

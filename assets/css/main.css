@@ -858,7 +858,7 @@ img{display:block;max-width:100%}
     letter-spacing:.02em;white-space:normal}
   .landscape-gate>span{display:block;width:100%;max-width:300px;margin:18px 0 28px;
     font:300 13px/1.8 var(--sans);letter-spacing:.04em;color:#587489;white-space:normal}
-  .landscape-gate button{min-width:220px;padding:15px 22px;border:1px solid #294a61;border-radius:999px;
+  .landscape-gate .landscape-gate-ready{min-width:220px;padding:15px 22px;border:1px solid #294a61;border-radius:999px;
     background:#294a61;color:#f5fafc;font:500 12px/1 var(--sans);letter-spacing:.12em}
   .landscape-gate .landscape-gate-skip{min-width:0;margin-top:15px;padding:8px 12px;border:0;
     background:transparent;color:#6d8799;font-size:11px;text-decoration:underline;text-underline-offset:4px}
@@ -867,4 +867,29 @@ img{display:block;max-width:100%}
   0%,28%{transform:rotate(0deg)}
   58%,88%{transform:rotate(90deg)}
   100%{transform:rotate(0deg)}
+}
+
+/* Phones held horizontally: restore the desktop hero composition. */
+@media (orientation:landscape) and (max-height:600px){
+  .top{padding:25px 4.5vw}
+  .top .top-brand{display:block;margin-right:5vw;font-size:9px}
+  .top nav{gap:3.3vw}
+  .top nav a{font-size:10px;letter-spacing:.18em}
+  .menu-mark{right:4.5vw;top:27px;width:24px}
+  .hero{min-height:100svh}
+  .hero-portrait{inset:0;width:100%;height:100%}
+  .hero-portrait img,.hero-foreground img{object-position:center center;transform:scale(1.015)}
+  .hero-name{left:3.4vw;top:13.5%;width:96.5vw;font-size:19.2vw;line-height:.82;letter-spacing:0}
+  .hero-eyebrow{left:5.2vw;top:44%;gap:16px;font-size:8px;letter-spacing:.32em}
+  .hero-eyebrow::before{width:38px}
+  .hero-tagline{left:5.2vw;top:48.5%;max-width:46vw;font-size:4.35vw;line-height:.88;
+    color:rgba(91,121,145,.88);text-shadow:none}
+  .hero-details{left:5.2vw;top:74%;max-width:44vw;gap:6px}
+  .hero-cn{font-size:clamp(12px,1.3vw,18px);letter-spacing:.07em;color:#263c4e}
+  .hero-capabilities{font-size:7px;letter-spacing:.15em;white-space:nowrap;color:rgba(44,68,88,.86)}
+  .hero-identity{font-size:7px;gap:12px;color:rgba(50,73,92,.8)}
+  .hero-selected{left:auto;right:4.6vw;bottom:3.7vh;color:var(--ink)}
+  .hero-selected b{color:var(--ink-soft)}
+  .hero-scroll{display:flex;right:4.55vw;top:56%}
+  .hero-scroll i{height:72px}
 }

@@ -15,33 +15,19 @@
   <div class="landscape-gate-phone" aria-hidden="true"><i></i></div>
   <p>LANDSCAPE EXPERIENCE</p>
   <h2 id="landscapeGateTitle">横屏观看<br>体验更完整</h2>
-  <span id="landscapeGateHint">请将手机横过来，<br>或点击下方按钮尝试进入横屏。</span>
-  <button type="button" id="landscapeGateEnter">进入横屏作品集</button>
+  <span>请关闭方向锁定并将手机横过来，<br>旋转后将自动进入作品集。</span>
+  <div class="landscape-gate-ready">旋转手机后自动进入</div>
   <button class="landscape-gate-skip" type="button" id="landscapeGateSkip">继续竖屏浏览</button>
 </aside>
 <script>
 (function(){
   var gate=document.getElementById("landscapeGate");
-  var enter=document.getElementById("landscapeGateEnter");
   var skip=document.getElementById("landscapeGateSkip");
-  var hint=document.getElementById("landscapeGateHint");
-  if(!gate||!enter||!skip) return;
+  if(!gate||!skip) return;
   if(sessionStorage.getItem("portfolio-portrait-ok")==="1") gate.classList.add("is-skipped");
   skip.addEventListener("click",function(){
     sessionStorage.setItem("portfolio-portrait-ok","1");
     gate.classList.add("is-skipped");
-  });
-  enter.addEventListener("click",async function(){
-    try{
-      if(document.documentElement.requestFullscreen&&!document.fullscreenElement){
-        await document.documentElement.requestFullscreen();
-      }
-      if(screen.orientation&&screen.orientation.lock){
-        await screen.orientation.lock("landscape");
-      }
-    }catch(error){
-      hint.textContent="当前浏览器不支持自动横屏，请关闭方向锁定后将手机横过来。";
-    }
   });
 })();
 </script>

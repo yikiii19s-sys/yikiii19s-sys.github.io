@@ -8,9 +8,36 @@
 <link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preload" href="assets/css2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=mobile-direct-2">
+<link rel="stylesheet" href="assets/css/main.css?v=mobile-landscape-safe-1">
 <link rel="stylesheet" href="assets/css/portfolio-return.css"></head>
 <body>
+<aside class="landscape-gate" id="landscapeGate" aria-labelledby="landscapeGateTitle">
+  <div class="landscape-gate-phone" aria-hidden="true"><i></i></div>
+  <p>LANDSCAPE EXPERIENCE</p>
+  <h2 id="landscapeGateTitle">请横屏观看</h2>
+  <span>关闭方向锁定后将手机横过来，<br>页面会自动进入完整横版。</span>
+  <div class="landscape-wechat-tip" id="landscapeWechatTip" hidden>
+    微信内无法可靠切换横屏。请点击右上角 ···，选择“在浏览器打开”。
+  </div>
+  <button class="landscape-gate-skip" type="button" id="landscapeGateSkip">继续竖屏浏览</button>
+</aside>
+<script>
+(function(){
+  var gate=document.getElementById("landscapeGate");
+  var skip=document.getElementById("landscapeGateSkip");
+  var wechatTip=document.getElementById("landscapeWechatTip");
+  if(!gate||!skip||!wechatTip) return;
+  if(/MicroMessenger/i.test(navigator.userAgent)){
+    gate.classList.add("is-wechat");
+    wechatTip.hidden=false;
+  }
+  if(sessionStorage.getItem("portfolio-portrait-ok")==="1") gate.classList.add("is-skipped");
+  skip.addEventListener("click",function(){
+    sessionStorage.setItem("portfolio-portrait-ok","1");
+    gate.classList.add("is-skipped");
+  });
+})();
+</script>
 <div class="grain" aria-hidden="true"></div>
 <div class="vignette" aria-hidden="true"></div>
 

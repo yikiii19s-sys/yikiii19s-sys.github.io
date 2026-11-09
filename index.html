@@ -8,7 +8,7 @@
 <link rel="preload" href="assets/sylvia-hero-person-cutout-v2.png" as="image" fetchpriority="high">
 <link rel="preload" href="assets/css2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=wechat-landscape-2">
+<link rel="stylesheet" href="assets/css/main.css?v=wechat-landscape-3">
 <link rel="stylesheet" href="assets/css/portfolio-return.css"></head>
 <body>
 <aside class="landscape-gate" id="landscapeGate" aria-labelledby="landscapeGateTitle">
@@ -28,13 +28,24 @@
   var exit=document.getElementById("landscapeExit");
   if(!gate||!force||!skip||!exit) return;
   if(sessionStorage.getItem("portfolio-portrait-ok")==="1") gate.classList.add("is-skipped");
+  function sizeForcedLandscape(){
+    var root=document.documentElement;
+    root.style.setProperty("--force-width",window.innerHeight+"px");
+    root.style.setProperty("--force-height",window.innerWidth+"px");
+    root.style.setProperty("--force-left",window.innerWidth+"px");
+  }
   force.addEventListener("click",function(){
+    sizeForcedLandscape();
     document.documentElement.classList.add("force-landscape");
     gate.classList.add("is-skipped");
+    window.scrollTo(0,0);
   });
   exit.addEventListener("click",function(){
     document.documentElement.classList.remove("force-landscape");
     gate.classList.remove("is-skipped");
+  });
+  window.addEventListener("resize",function(){
+    if(document.documentElement.classList.contains("force-landscape")) sizeForcedLandscape();
   });
   skip.addEventListener("click",function(){
     sessionStorage.setItem("portfolio-portrait-ok","1");

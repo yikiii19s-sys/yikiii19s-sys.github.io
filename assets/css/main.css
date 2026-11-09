@@ -875,7 +875,7 @@ html.force-landscape body{
   position:fixed;left:var(--force-left,100%);top:0;
   width:var(--force-width,100vh);height:var(--force-height,100vw);max-width:none;max-height:none;
   overflow-x:hidden;overflow-y:auto;transform-origin:top left;
-  transform:rotate(90deg);overscroll-behavior:none;
+  transform:rotate(90deg);overscroll-behavior:none;touch-action:none;-webkit-overflow-scrolling:touch;
 }
 html.force-landscape .landscape-gate{display:none}
 html.force-landscape .landscape-exit{

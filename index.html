@@ -8,7 +8,7 @@
 <link rel="preload" href="assets/sylvia-hero-person-cutout-v2.png" as="image" fetchpriority="high">
 <link rel="preload" href="assets/css2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=wechat-landscape-3">
+<link rel="stylesheet" href="assets/css/main.css?v=wechat-landscape-4">
 <link rel="stylesheet" href="assets/css/portfolio-return.css"></head>
 <body>
 <aside class="landscape-gate" id="landscapeGate" aria-labelledby="landscapeGateTitle">
@@ -51,6 +51,26 @@
     sessionStorage.setItem("portfolio-portrait-ok","1");
     gate.classList.add("is-skipped");
   });
+  var touchX=0,touchY=0;
+  document.addEventListener("touchstart",function(event){
+    if(!document.documentElement.classList.contains("force-landscape")||event.touches.length!==1) return;
+    touchX=event.touches[0].clientX;
+    touchY=event.touches[0].clientY;
+  },{passive:true});
+  document.addEventListener("touchmove",function(event){
+    if(!document.documentElement.classList.contains("force-landscape")||event.touches.length!==1) return;
+    var nextX=event.touches[0].clientX;
+    var nextY=event.touches[0].clientY;
+    var deltaX=nextX-touchX;
+    var deltaY=nextY-touchY;
+    touchX=nextX;
+    touchY=nextY;
+    var delta=Math.abs(deltaX)>Math.abs(deltaY)?deltaX:-deltaY;
+    if(Math.abs(delta)>1){
+      document.body.scrollTop+=delta;
+      event.preventDefault();
+    }
+  },{passive:false});
 })();
 </script>
 <div class="grain" aria-hidden="true"></div>

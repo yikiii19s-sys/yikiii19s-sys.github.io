@@ -834,3 +834,37 @@ img{display:block;max-width:100%}
   #view-brand > .p-section:nth-of-type(6) > .p-grid { margin-top: 24px; }
   #view-brand .p-cta { position: static; margin-top: 26px; display: inline-flex; }
 }
+
+/* Mobile orientation gate: keep the cinematic composition in landscape. */
+.landscape-gate{display:none}
+@media (max-width:900px) and (orientation:portrait){
+  .landscape-gate{
+    position:fixed;inset:0;z-index:10000;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;min-height:100dvh;padding:36px 30px;
+    background:linear-gradient(145deg,#edf5f8 0%,#d7e6ee 48%,#b9cedd 100%);
+    color:#213a4c;text-align:center;font-family:var(--sans);
+  }
+  .landscape-gate.is-skipped{display:none}
+  .landscape-gate-phone{
+    width:52px;height:86px;margin-bottom:30px;border:1.5px solid rgba(33,58,76,.72);
+    border-radius:9px;position:relative;animation:landscapeTurn 2.2s var(--ease) infinite;
+  }
+  .landscape-gate-phone::before{content:"";position:absolute;left:50%;top:6px;width:14px;height:2px;
+    border-radius:2px;background:currentColor;transform:translateX(-50%)}
+  .landscape-gate-phone i{position:absolute;left:50%;bottom:6px;width:5px;height:5px;
+    border:1px solid currentColor;border-radius:50%;transform:translateX(-50%)}
+  .landscape-gate p{margin:0 0 14px;font:500 10px/1 var(--sans);letter-spacing:.32em;color:#66849a}
+  .landscape-gate h2{max-width:100%;margin:0;font:400 clamp(28px,8vw,40px)/1.12 var(--serif);
+    letter-spacing:.02em;white-space:normal}
+  .landscape-gate>span{display:block;width:100%;max-width:300px;margin:18px 0 28px;
+    font:300 13px/1.8 var(--sans);letter-spacing:.04em;color:#587489;white-space:normal}
+  .landscape-gate button{min-width:220px;padding:15px 22px;border:1px solid #294a61;border-radius:999px;
+    background:#294a61;color:#f5fafc;font:500 12px/1 var(--sans);letter-spacing:.12em}
+  .landscape-gate .landscape-gate-skip{min-width:0;margin-top:15px;padding:8px 12px;border:0;
+    background:transparent;color:#6d8799;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+}
+@keyframes landscapeTurn{
+  0%,28%{transform:rotate(0deg)}
+  58%,88%{transform:rotate(90deg)}
+  100%{transform:rotate(0deg)}
+}

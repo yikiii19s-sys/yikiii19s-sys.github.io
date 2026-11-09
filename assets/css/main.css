@@ -869,6 +869,20 @@ img{display:block;max-width:100%}
   100%{transform:rotate(0deg)}
 }
 
+.landscape-exit{display:none}
+html.force-landscape{width:100%;height:100%;overflow:hidden;background:#dbe4ea}
+html.force-landscape body{
+  position:fixed;left:0;top:0;width:100vh;height:100vw;max-width:none;max-height:none;
+  overflow-x:hidden;overflow-y:auto;transform-origin:top left;
+  transform:rotate(90deg) translateY(-100%);overscroll-behavior:none;
+}
+html.force-landscape .landscape-gate{display:none}
+html.force-landscape .landscape-exit{
+  position:fixed;z-index:10001;right:14px;top:12px;display:block;padding:8px 11px;
+  border:1px solid rgba(37,63,82,.32);border-radius:999px;background:rgba(237,245,248,.82);
+  color:#294a61;font:500 9px/1 var(--sans);letter-spacing:.08em;backdrop-filter:blur(8px)
+}
+
 /* Phones held horizontally: restore the desktop hero composition. */
 @media (orientation:landscape) and (max-height:600px){
   .top{padding:25px 4.5vw}
@@ -893,3 +907,27 @@ img{display:block;max-width:100%}
   .hero-scroll{display:flex;right:4.55vw;top:56%}
   .hero-scroll i{height:72px}
 }
+
+/* WeChat fallback: the viewport stays portrait, so the page itself is rotated. */
+html.force-landscape .top{padding:25px 4.5vh}
+html.force-landscape .top .top-brand{display:block;margin-right:5vh;font-size:9px}
+html.force-landscape .top nav{gap:3.3vh}
+html.force-landscape .top nav a{font-size:10px;letter-spacing:.18em}
+html.force-landscape .menu-mark{right:4.5vh;top:27px;width:24px}
+html.force-landscape .hero{min-height:100svh}
+html.force-landscape .hero-portrait{inset:0;width:100%;height:100%}
+html.force-landscape .hero-portrait img,
+html.force-landscape .hero-foreground img{object-position:center center;transform:scale(1.015)}
+html.force-landscape .hero-name{left:3.4vh;top:13.5%;width:96.5vh;font-size:19.2vh;line-height:.82;letter-spacing:0}
+html.force-landscape .hero-eyebrow{left:5.2vh;top:44%;gap:16px;font-size:8px;letter-spacing:.32em}
+html.force-landscape .hero-eyebrow::before{width:38px}
+html.force-landscape .hero-tagline{left:5.2vh;top:48.5%;max-width:46vh;font-size:4.35vh;line-height:.88;
+  color:rgba(91,121,145,.88);text-shadow:none}
+html.force-landscape .hero-details{left:5.2vh;top:74%;max-width:44vh;gap:6px}
+html.force-landscape .hero-cn{font-size:clamp(12px,1.3vh,18px);letter-spacing:.07em;color:#263c4e}
+html.force-landscape .hero-capabilities{font-size:7px;letter-spacing:.15em;white-space:nowrap;color:rgba(44,68,88,.86)}
+html.force-landscape .hero-identity{font-size:7px;gap:12px;color:rgba(50,73,92,.8)}
+html.force-landscape .hero-selected{left:auto;right:4.6vh;bottom:3.7vw;color:var(--ink)}
+html.force-landscape .hero-selected b{color:var(--ink-soft)}
+html.force-landscape .hero-scroll{display:flex;right:4.55vh;top:56%}
+html.force-landscape .hero-scroll i{height:72px}

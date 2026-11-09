@@ -15,16 +15,27 @@
   <div class="landscape-gate-phone" aria-hidden="true"><i></i></div>
   <p>LANDSCAPE EXPERIENCE</p>
   <h2 id="landscapeGateTitle">横屏观看<br>体验更完整</h2>
-  <span>请关闭方向锁定并将手机横过来，<br>旋转后将自动进入作品集。</span>
-  <div class="landscape-gate-ready">旋转手机后自动进入</div>
+  <span>微信内请先点击下方按钮，<br>再将手机向左横过来。</span>
+  <button class="landscape-gate-ready" type="button" id="landscapeGateForce">微信内横屏显示</button>
   <button class="landscape-gate-skip" type="button" id="landscapeGateSkip">继续竖屏浏览</button>
 </aside>
+<button class="landscape-exit" type="button" id="landscapeExit" aria-label="退出网页横屏模式">退出横屏</button>
 <script>
 (function(){
   var gate=document.getElementById("landscapeGate");
+  var force=document.getElementById("landscapeGateForce");
   var skip=document.getElementById("landscapeGateSkip");
-  if(!gate||!skip) return;
+  var exit=document.getElementById("landscapeExit");
+  if(!gate||!force||!skip||!exit) return;
   if(sessionStorage.getItem("portfolio-portrait-ok")==="1") gate.classList.add("is-skipped");
+  force.addEventListener("click",function(){
+    document.documentElement.classList.add("force-landscape");
+    gate.classList.add("is-skipped");
+  });
+  exit.addEventListener("click",function(){
+    document.documentElement.classList.remove("force-landscape");
+    gate.classList.remove("is-skipped");
+  });
   skip.addEventListener("click",function(){
     sessionStorage.setItem("portfolio-portrait-ok","1");
     gate.classList.add("is-skipped");

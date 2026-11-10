@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>选题工作台 · AIGC 营销智能体</title>
+  <link rel="stylesheet" href="workbench.css">
+</head>
+<body>
+  <aside class="rail">
+    <a class="brand" href="index.html"><span aria-hidden="true">✦</span> 选题工作台</a>
+    <p class="rail-label">WORKSPACE</p>
+    <p class="rail-current">▤　营销选题</p>
+    <p class="rail-note">界面概念稿<br>基于 AIGC 营销智能体</p>
+  </aside>
+  <main>
+    <header class="top"><a href="index.html">← 返回项目案例</a><span class="badge">交互演示 · 示例数据</span></header>
+    <div class="workspace">
+      <nav class="steps" aria-label="任务进度">
+        <button id="edit" type="button" aria-current="step">01　创建任务</button>
+        <button id="review" type="button" disabled>02　查看推荐</button>
+      </nav>
+      <section id="create" aria-labelledby="create-title">
+        <p class="eyebrow">CAMPAIGN BRIEF</p>
+        <h1 id="create-title">创建选题任务</h1>
+        <p class="lede">明确品牌和传播目标，为内容运营准备一组选题方向。</p>
+        <div class="layout">
+          <form id="task" class="panel">
+            <div class="panel-head"><div><h2>任务信息</h2><p>已填入晚风研究所示例，可修改字段体验操作。</p></div><span class="tag">示例任务</span></div>
+            <div class="fields">
+              <label>品牌名称<input name="brand" required value="晚风研究所"></label>
+              <label>产品 / 服务<input name="product" required value="四款情绪主题饮品"></label>
+              <label>投放平台<select name="platform"><option>小红书</option><option>抖音</option><option>微信公众号</option></select></label>
+              <label>营销目标<select name="goal"><option>新品认知</option><option>内容互动</option><option>产品种草</option></select></label>
+              <label class="wide">目标受众<input name="audience" required value="喜欢尝试新饮品、关注情绪表达的年轻消费者"></label>
+              <label class="wide">品牌调性<textarea name="tone" rows="2" required>轻松、细腻，以「情绪即天气」表达不同饮品的个性。</textarea></label>
+            </div>
+            <div class="actions"><p>此演示使用预设选题，表单修改会反映在任务摘要中。</p><button class="primary" type="submit">查看示例推荐 <span aria-hidden="true">→</span></button></div>
+          </form>
+          <aside class="panel guide">
+            <p class="eyebrow">OUTPUT PREVIEW</p><h2>这一步会得到什么？</h2>
+            <ol><li><b>五类选题方向</b><span>按痛点、场景、产品、互动与热点组织。</span></li><li><b>Top 3 推荐</b><span>优先查看与传播目标更相关的选题。</span></li><li><b>选题 Brief</b><span>用推荐理由和内容提纲辅助执行。</span></li></ol>
+          </aside>
+        </div>
+      </section>
+      <section id="results" aria-labelledby="result-title" hidden>
+        <p class="eyebrow">TOPIC RECOMMENDATIONS</p>
+        <h1 id="result-title" tabindex="-1">查看推荐结果</h1>
+        <p class="lede" id="summary"></p>
+        <div class="layout">
+          <div class="panel">
+            <div class="panel-head"><div><h2>选题列表</h2><p>先看推荐，再按内容方向筛选。</p></div><span class="tag" id="count" aria-live="polite"></span></div>
+            <div id="filters" class="filters" aria-label="筛选选题"></div>
+            <div id="topics" class="topics"></div>
+          </div>
+          <aside class="panel brief" id="brief" aria-live="polite"></aside>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="workbench.js"></script>
+</body>
+</html>

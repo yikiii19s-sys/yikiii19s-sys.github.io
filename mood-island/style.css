@@ -39,6 +39,14 @@ h2 { font-size: clamp(1.65rem, 4.1vw, 2.8rem); letter-spacing: -.045em; }
 .label { font-size: .76rem; font-weight: 700; margin: 0 0 12px; }
 .chapter { padding: 44px 0; border-top: 1px solid #d5d9c8; }
 .chapter > p { max-width: 43em; }
+.evidence-strip {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;
+  margin: 24px 0 10px;
+}
+.evidence-strip > div { padding: 18px; border: 1px solid #d5d9c8; border-radius: 12px; background: #f7f5eb; }
+.evidence-strip strong { display: inline-block; margin-right: 7px; font: 600 2.15rem/1 Georgia, serif; color: #263523; }
+.evidence-strip span { color: #485640; font-size: .82rem; letter-spacing: .08em; }
+.evidence-strip p { margin: 12px 0 0; color: #505c4b; font-size: .82rem; }
 .research {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
   margin-top: 24px;
@@ -82,6 +90,8 @@ figcaption span { font-size: .9rem; color: #505c4b; }
   .hero-art { padding: 25px 12%; }
   .chapter { padding: 31px 0; }
   .research { grid-template-columns: 1fr; gap: 10px; }
+  .evidence-strip { grid-template-columns: 1fr; gap: 8px; }
+  .evidence-strip > div { padding: 15px; }
   .visual-system { grid-template-columns: 1fr; gap: 12px; }
   .screens { grid-template-columns: 1fr; gap: 10px; }
   figure { display: grid; grid-template-columns: minmax(95px, .85fr) 1fr; gap: 16px; padding: 14px; }

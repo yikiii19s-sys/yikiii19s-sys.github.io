@@ -8,7 +8,7 @@
 <link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" media="(min-width:641px), (orientation:landscape)" fetchpriority="high">
 <link rel="preload" href="assets/css2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=dual-positioning-1">
+<link rel="stylesheet" href="assets/css/main.css?v=project-filters-1">
 <link rel="stylesheet" href="assets/css/portfolio-return.css"></head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -45,8 +45,8 @@
         <p class="hero-capabilities">PRODUCT DESIGN / UI·UX / AIGC VISUAL / MOTION &amp; INTERACTIVE</p>
         <p class="hero-identity"><span>韩祎飒 · 数字媒体艺术 · 2027 届</span><span>杭州 / 上海</span></p>
         <div class="hero-paths" aria-label="按方向浏览作品">
-          <button type="button" data-world-focus="product">PRODUCT &amp; UX CASES <b>↘</b></button>
-          <button type="button" data-world-focus="visual">VISUAL &amp; MOTION WORKS <b>↘</b></button>
+          <button type="button" data-project-filter="product" data-filter-source="hero">PRODUCT &amp; EXPERIENCE — 04 <b>↘</b></button>
+          <button type="button" data-project-filter="visual" data-filter-source="hero">VISUAL &amp; MOTION — 05 <b>↘</b></button>
         </div>
       </div>
     </div>
@@ -102,24 +102,29 @@
       </div>
       <p class="worlds-note">从产品体验与界面设计，到 AI 视觉、影像与互动世界。选择与你关注方向相关的案例。</p>
     </div>
+    <div class="worlds-filters" aria-label="筛选项目类型">
+      <button class="is-active" type="button" data-project-filter="all" aria-pressed="true">ALL — 09</button>
+      <button type="button" data-project-filter="product" aria-pressed="false">PRODUCT &amp; EXPERIENCE — 04</button>
+      <button type="button" data-project-filter="visual" aria-pressed="false">VISUAL &amp; MOTION — 05</button>
+    </div>
 
     <div class="archive-stage" id="archiveStage">
       <div class="archive-glow" aria-hidden="true"></div>
       <div class="archive-back" aria-hidden="true"></div>
       <div class="archive-files" id="archiveFiles">
-        <a class="archive-card" data-track="product" href="mood-island/index.html" aria-label="进入心情岛移动端 UI 项目"><span class="art"><img src="mood-island/assets/interface-mockup.webp?v=2" alt="" loading="lazy"></span><span class="meta"><small>01 / PRODUCT UI</small><strong>Mood Island / 心情岛</strong><i>儿童情绪记录与互动 · 移动端 UI 设计</i></span></a>
-        <a class="archive-card" href="#/marketing-agent" aria-label="进入 AIGC 营销智能体项目"><span class="art"><img src="aigc-marketing-agent/assets/marketing-agent-card-cover-v1.png" alt="营销智能体从输入、策略处理到营销内容输出的产品工作流界面" loading="lazy"></span><span class="meta"><small>02 / AI PRODUCT</small><strong>AIGC 营销智能体</strong><i>从品牌信息到选题推荐 · AI 产品原型</i></span></a>
-        <a class="archive-card archive-card-aigc" href="s02-aigc/index.html" aria-label="进入 AIGC 商业内容实习案例"><span class="art"><img src="s02-aigc/homepage-card.jpg" alt="AI 运镜教程中的四人群像" loading="lazy"></span><span class="meta"><small>03 / COMMERCIAL</small><strong>AIGC 商业内容</strong><i>小红书内容实习 · 独立完成 25+ 套内容</i></span></a>
-        <a class="archive-card" href="#/brand" aria-label="进入晚风研究所品牌设计项目"><span class="art"><img src="wanfeng-lab/assets/hero_brand.png" alt="" loading="lazy"></span><span class="meta"><small>04 / BRAND DESIGN</small><strong>晚风研究所</strong><i>饮品品牌概念 · 包装、海报与品牌短片</i></span></a>
-        <a class="archive-card" href="#/wayfinder" aria-label="进入 WAYFINDER 3D 交互项目"><span class="art"><img src="assets/wayfinder-island.jpg" alt="" loading="lazy"></span><span class="meta"><small>05 / 3D EXPERIENCE</small><strong>WAYFINDER</strong><i>可操作的 3D 岛屿探索体验</i></span></a>
-        <a class="archive-card" data-track="visual" href="visual-playground-full/index.html" aria-label="进入视觉实验室项目"><span class="art"><img src="visual-playground-full/assets/hero-approved.png" alt="" loading="lazy"></span><span class="meta"><small>06 / VISUAL STUDIES</small><strong>视觉实验室</strong><i>AI 视觉实验 · 风格探索与画面设计</i></span></a>
-        <a class="archive-card" href="#/motion" aria-label="进入 AI 影像叙事项目"><span class="art"><img src="assets/ai-motion/animated-cover.jpg" alt="" loading="lazy"></span><span class="meta"><small>07 / AI MOTION</small><strong>AI 影像叙事</strong><i>AI 动态影像 · 镜头设计与视觉叙事</i></span></a>
-        <a class="archive-card" href="#/ssd" aria-label="进入未来祭典互动世界项目"><span class="art"><img src="assets/hero_world-web.webp" alt="" loading="lazy"></span><span class="meta"><small>08 / INTERACTIVE WORLD</small><strong>未来祭典</strong><i>未来祭典世界观 · 场景设计与互动探索</i></span></a>
-        <a class="archive-card" href="#/tiangong" aria-label="进入天宫美学 AI 影像项目"><span class="art"><img src="assets/editorial-hero-web.webp" alt="" loading="lazy"></span><span class="meta"><small>09 / AI FILM</small><strong>天宫美学</strong><i>东方天宫意象 · AI 短片与视觉设定</i></span></a>
+        <a class="archive-card" data-category="product" href="mood-island/index.html" aria-label="进入心情岛移动端 UI 项目"><span class="art"><img src="mood-island/assets/interface-mockup.webp?v=2" alt="" loading="lazy"></span><span class="meta"><small>01 / PRODUCT UI</small><strong>Mood Island / 心情岛</strong><i>儿童情绪记录与互动 · 移动端 UI 设计</i></span></a>
+        <a class="archive-card" data-category="product" href="#/marketing-agent" aria-label="进入 AIGC 营销智能体项目"><span class="art"><img src="aigc-marketing-agent/assets/marketing-agent-card-cover-v1.png" alt="营销智能体从输入、策略处理到营销内容输出的产品工作流界面" loading="lazy"></span><span class="meta"><small>02 / AI PRODUCT</small><strong>AIGC 营销智能体</strong><i>从品牌信息到选题推荐 · AI 产品原型</i></span></a>
+        <a class="archive-card archive-card-aigc" data-category="visual" href="s02-aigc/index.html" aria-label="进入 AIGC 商业内容实习案例"><span class="art"><img src="s02-aigc/homepage-card.jpg" alt="AI 运镜教程中的四人群像" loading="lazy"></span><span class="meta"><small>03 / COMMERCIAL</small><strong>AIGC 商业内容</strong><i>小红书内容实习 · 独立完成 25+ 套内容</i></span></a>
+        <a class="archive-card" data-category="visual" href="#/brand" aria-label="进入晚风研究所品牌设计项目"><span class="art"><img src="wanfeng-lab/assets/hero_brand.png" alt="" loading="lazy"></span><span class="meta"><small>04 / BRAND DESIGN</small><strong>晚风研究所</strong><i>饮品品牌概念 · 包装、海报与品牌短片</i></span></a>
+        <a class="archive-card" data-category="product" href="#/wayfinder" aria-label="进入 WAYFINDER 3D 交互项目"><span class="art"><img src="assets/wayfinder-island.jpg" alt="" loading="lazy"></span><span class="meta"><small>05 / 3D EXPERIENCE</small><strong>WAYFINDER</strong><i>可操作的 3D 岛屿探索体验</i></span></a>
+        <a class="archive-card" data-category="visual" href="visual-playground-full/index.html" aria-label="进入视觉实验室项目"><span class="art"><img src="visual-playground-full/assets/hero-approved.png" alt="" loading="lazy"></span><span class="meta"><small>06 / VISUAL STUDIES</small><strong>视觉实验室</strong><i>AI 视觉实验 · 风格探索与画面设计</i></span></a>
+        <a class="archive-card" data-category="visual" href="#/motion" aria-label="进入 AI 影像叙事项目"><span class="art"><img src="assets/ai-motion/animated-cover.jpg" alt="" loading="lazy"></span><span class="meta"><small>07 / AI MOTION</small><strong>AI 影像叙事</strong><i>AI 动态影像 · 镜头设计与视觉叙事</i></span></a>
+        <a class="archive-card" data-category="product" href="#/ssd" aria-label="进入未来祭典互动世界项目"><span class="art"><img src="assets/hero_world-web.webp" alt="" loading="lazy"></span><span class="meta"><small>08 / INTERACTIVE WORLD</small><strong>未来祭典</strong><i>未来祭典世界观 · 场景设计与互动探索</i></span></a>
+        <a class="archive-card" data-category="visual" href="#/tiangong" aria-label="进入天宫美学 AI 影像项目"><span class="art"><img src="assets/editorial-hero-web.webp" alt="" loading="lazy"></span><span class="meta"><small>09 / AI FILM</small><strong>天宫美学</strong><i>东方天宫意象 · AI 短片与视觉设定</i></span></a>
       </div>
       <button class="archive-front" id="archiveToggle" type="button" aria-expanded="false" aria-controls="archiveFiles">
         <span class="archive-label"><small>SYLVIA / CREATIVE ARCHIVE</small><strong>Selected<br>Worlds</strong></span>
-        <span class="archive-seal" aria-hidden="true">S<b>✦</b></span><span class="archive-index">VOL. 01 — 09</span>
+        <span class="archive-seal" aria-hidden="true">S<b>✦</b></span><span class="archive-index" id="archiveIndex">VOL. 01 — 09</span>
       </button>
       <p class="archive-hint" id="archiveHint">HOVER OR TAP TO OPEN ↗</p>
     </div>
@@ -639,25 +644,6 @@
     window.scrollTo({top:y, behavior: reduceMotion ? "auto" : "smooth"});
   }
 
-  /* ---------- 首屏双入口：同一作品集，两条清晰浏览路径 ---------- */
-  document.querySelectorAll("[data-world-focus]").forEach(function(button){
-    button.addEventListener("click", function(){
-      var track = button.getAttribute("data-world-focus");
-      var target = document.querySelector('.archive-card[data-track="' + track + '"]');
-      scrollToSection("worlds");
-      setArchive(true,true);
-      if(!target) return;
-      setTimeout(function(){
-        if(window.matchMedia("(max-width:640px)").matches){
-          target.scrollIntoView({block:"center", behavior:reduceMotion ? "auto" : "smooth"});
-        }else{
-          target.classList.add("is-route-focus");
-          setTimeout(function(){ target.classList.remove("is-route-focus"); }, 1600);
-        }
-      }, 560);
-    });
-  });
-
   /* ---------- 项目视图：返回 / 下一个 ---------- */
   document.querySelectorAll("[data-back]").forEach(function(b){
     b.addEventListener("click", function(e){
@@ -909,9 +895,12 @@
   var archive = document.getElementById("archiveStage");
   var archiveToggle = document.getElementById("archiveToggle");
   var archiveHint = document.getElementById("archiveHint");
-  var archiveCards = archive ? Array.prototype.slice.call(archive.querySelectorAll(".archive-card")) : [];
+  var archiveIndex = document.getElementById("archiveIndex");
+  var allArchiveCards = archive ? Array.prototype.slice.call(archive.querySelectorAll(".archive-card")) : [];
+  var archiveCards = allArchiveCards.slice();
   var archiveOpen = false;
   var archiveFocused = -1;
+  var projectFilter = "all";
   var finePointer = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
   function archiveTransform(index, open){
     var mobile = window.innerWidth <= 820;
@@ -930,6 +919,13 @@
   }
   function renderArchive(animate, stagger){
     archive.classList.toggle("has-focus",archiveOpen && archiveFocused !== -1);
+    allArchiveCards.forEach(function(card){
+      var visible = archiveCards.indexOf(card) !== -1;
+      card.classList.toggle("is-filtered-out",!visible);
+      card.setAttribute("aria-hidden",String(!visible));
+      if(!visible) card.tabIndex = -1;
+      else card.removeAttribute("tabindex");
+    });
     archiveCards.forEach(function(card,index){
       card.style.transition = (!animate || reduceMotion) ? "none" : "transform .85s var(--ease), opacity .5s var(--ease), box-shadow .45s var(--ease)";
       card.style.transitionDelay = stagger && !reduceMotion ? index * 65 + "ms" : "0ms";
@@ -953,16 +949,36 @@
     archiveHint.textContent = index < 0 ? "SELECT A WORLD ↗" : archiveCards[index].querySelector("strong").textContent + " / CLICK TO EXPLORE ↗";
     renderArchive(true,false);
   }
+  function applyProjectFilter(filter, fromHero){
+    projectFilter = filter === "product" || filter === "visual" ? filter : "all";
+    archiveCards = projectFilter === "all" ? allArchiveCards.slice() : allArchiveCards.filter(function(card){
+      return card.getAttribute("data-category") === projectFilter;
+    });
+    archiveFocused = -1;
+    document.querySelectorAll("[data-project-filter]").forEach(function(button){
+      var active = button.getAttribute("data-project-filter") === projectFilter;
+      button.classList.toggle("is-active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+    if(archiveIndex) archiveIndex.textContent = projectFilter === "all" ? "VOL. 01 — 09" : (projectFilter === "product" ? "PRODUCT — 04" : "VISUAL — 05");
+    if(fromHero) scrollToSection("worlds");
+    setArchive(true,true);
+  }
   setArchive(false,false);
   if(archive){
     archive.addEventListener("mouseenter",function(){ if(finePointer) setArchive(true,true); });
     archive.addEventListener("mouseleave",function(){ if(finePointer) setArchive(false,true); });
     archiveToggle.addEventListener("click",function(){ setArchive(finePointer ? true : !archiveOpen,true); });
-    archiveCards.forEach(function(card,index){
-      card.addEventListener("mouseenter",function(){ if(finePointer) focusArchive(index); });
+    allArchiveCards.forEach(function(card){
+      card.addEventListener("mouseenter",function(){ if(finePointer){ var index=archiveCards.indexOf(card); if(index!==-1) focusArchive(index); } });
       card.addEventListener("mouseleave",function(){ if(finePointer && archiveOpen) focusArchive(-1); });
-      card.addEventListener("focus",function(){ focusArchive(index); });
+      card.addEventListener("focus",function(){ var index=archiveCards.indexOf(card); if(index!==-1) focusArchive(index); });
       card.addEventListener("blur",function(){ if(archiveOpen) focusArchive(-1); });
+    });
+    document.querySelectorAll("[data-project-filter]").forEach(function(button){
+      button.addEventListener("click",function(){
+        applyProjectFilter(button.getAttribute("data-project-filter"),button.getAttribute("data-filter-source")==="hero");
+      });
     });
     window.addEventListener("resize",function(){ renderArchive(false,false); });
   }

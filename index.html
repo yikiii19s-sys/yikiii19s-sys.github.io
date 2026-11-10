@@ -8,7 +8,7 @@
 <link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preload" href="assets/css2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=mobile-landscape-safe-1">
+<link rel="stylesheet" href="assets/css/main.css?v=mobile-portrait-3">
 <link rel="stylesheet" href="assets/css/portfolio-return.css"></head>
 <body>
 <aside class="landscape-gate" id="landscapeGate" aria-labelledby="landscapeGateTitle">
@@ -58,7 +58,10 @@
   <!-- 01 HERO — The Portrait -->
   <section class="hero" id="hero">
     <div class="hero-portrait" id="heroPortrait" aria-hidden="true">
-      <img src="assets/sylvia-hero-111-v1.jpg" alt="雾蓝光束中的银白长发女性，蕾丝花叶面饰半掩面容，白色轻纱垂落" fetchpriority="high">
+      <picture>
+        <source media="(max-width:640px) and (orientation:portrait)" srcset="assets/sylvia-hero-222-v1.jpg">
+        <img src="assets/sylvia-hero-111-v1.jpg" alt="雾蓝光束中的银白长发女性，蕾丝花叶面饰半掩面容，白色轻纱垂落" fetchpriority="high">
+      </picture>
     </div>
     <div class="hero-copy" id="heroCopy">
       <p class="hero-eyebrow">AIGC CREATIVE PORTFOLIO — 2027</p>
@@ -845,7 +848,9 @@
   var typeTarget = document.getElementById("typeTarget");
   if(typeTarget){
     var phrase = "Dream beyond\nreality.";
-    if(reduceMotion){ typeTarget.textContent = phrase; }
+    if(reduceMotion || window.matchMedia("(max-width:640px) and (orientation:portrait)").matches){
+      typeTarget.textContent = phrase;
+    }
     else{
       var ti = 0;
       setTimeout(function(){

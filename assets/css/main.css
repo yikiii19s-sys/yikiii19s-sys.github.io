@@ -98,10 +98,10 @@ img{display:block;max-width:100%}
 .hero{position:relative;min-height:100svh;display:flex;align-items:stretch;background:var(--fog-100);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(239,242,243,.18),transparent 48%)}
 .hero-portrait{position:absolute;inset:0;z-index:0;will-change:transform;
-  opacity:0;transform:translateY(18px);animation:heroIn 1.6s var(--ease) .15s forwards}
+  opacity:0;transform:translateY(8px);animation:heroIn .72s var(--ease) .04s forwards}
 .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center center;transform:scale(1.015);will-change:transform}
 .hero-foreground{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;
-  opacity:0;transform:translateY(18px);animation:heroIn 1.6s var(--ease) .15s forwards;
+  opacity:0;transform:translateY(8px);animation:heroIn .72s var(--ease) .04s forwards;
 }
 .hero-foreground img{width:100%;height:100%;object-fit:cover;object-position:center center;transform:scale(1.015);will-change:transform}
 @keyframes heroIn{to{opacity:1;transform:translateY(0)}}
@@ -110,12 +110,12 @@ img{display:block;max-width:100%}
 .hero-name .ch{display:inline-block;opacity:0;transform:translateY(34px) rotate(2deg);
   animation:chIn .9s var(--spring) forwards;will-change:transform}
 @keyframes chIn{to{opacity:1;transform:translateY(0) rotate(0)}}
-.hero-eyebrow{position:absolute;z-index:4;left:5.2vw;top:44%;display:flex;align-items:center;gap:16px;margin:0;font-family:var(--sans);font-weight:300;font-size:clamp(8px,.67vw,11px);letter-spacing:.42em;color:rgba(55,76,94,.72);opacity:0;animation:heroIn 1.2s var(--ease) .58s forwards}
+.hero-eyebrow{position:absolute;z-index:4;left:5.2vw;top:44%;display:flex;align-items:center;gap:16px;margin:0;font-family:var(--sans);font-weight:300;font-size:clamp(8px,.67vw,11px);letter-spacing:.42em;color:rgba(55,76,94,.72);opacity:0;animation:heroIn .55s var(--ease) .12s forwards}
 .hero-eyebrow::before{content:"";width:38px;height:1px;background:currentColor;opacity:.68}
-.hero-tagline{position:absolute;z-index:4;left:5.2vw;top:48.5%;max-width:46vw;margin:0;white-space:pre-line;font-family:"Sylvia Bodoni Moda",var(--serif);font-style:italic;font-weight:330;font-optical-sizing:auto;font-size:clamp(34px,4.35vw,82px);line-height:.88;letter-spacing:-.035em;color:rgba(91,121,145,.88);opacity:0;animation:heroIn .5s var(--ease) .9s forwards}
+.hero-tagline{position:absolute;z-index:4;left:5.2vw;top:48.5%;max-width:46vw;margin:0;white-space:pre-line;font-family:"Sylvia Bodoni Moda",var(--serif);font-style:italic;font-weight:330;font-optical-sizing:auto;font-size:clamp(34px,4.35vw,82px);line-height:.88;letter-spacing:-.035em;color:rgba(91,121,145,.88);opacity:0;animation:heroIn .42s var(--ease) .2s forwards}
 .hero-tagline .type-caret{display:inline-block;width:1px;height:.82em;margin-left:.08em;vertical-align:-.06em;background:rgba(176,140,82,.9);animation:heroCaret 1s steps(1,end) infinite}
 @keyframes heroCaret{50%{opacity:0}}
-.hero-details{position:absolute;z-index:4;left:5.2vw;top:74%;display:flex;flex-direction:column;align-items:flex-start;gap:11px;max-width:42vw;opacity:0;animation:heroIn 1.35s var(--ease) 1.12s forwards}
+.hero-details{position:absolute;z-index:4;left:5.2vw;top:74%;display:flex;flex-direction:column;align-items:flex-start;gap:11px;max-width:42vw;opacity:0;animation:heroIn .62s var(--ease) .28s forwards}
 .hero-cn{margin:0;font-family:var(--serif);font-weight:450;font-size:clamp(14px,1.3vw,22px);letter-spacing:.07em;color:#263c4e}
 .hero-capabilities{margin:0;font-family:var(--sans);font-weight:400;font-size:clamp(8px,.65vw,11px);letter-spacing:.2em;color:rgba(44,68,88,.86);white-space:nowrap}
 .hero-identity{margin:2px 0 0;display:flex;gap:18px;flex-wrap:wrap;font-family:var(--sans);font-weight:400;font-size:clamp(8px,.58vw,10px);letter-spacing:.2em;color:rgba(50,73,92,.8)}
@@ -327,7 +327,7 @@ img{display:block;max-width:100%}
 .contact-github:hover{color:#173249;border-color:#173249}
 
 /* 03/04 — 原结构上的电影级环境光，不改变页面构图 */
-.worlds{isolation:isolate;overflow:hidden;background:#e4eff7 url("../selected-worlds-environment-v1.png") center/cover no-repeat}
+.worlds{isolation:isolate;overflow:hidden;background:#e4eff7 url("../selected-worlds-environment-v1.webp") center/cover no-repeat}
 .worlds::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(244,249,252,.08),transparent 44%,rgba(210,227,238,.08));}
 .worlds::after{content:"";position:absolute;left:8%;right:8%;bottom:1.5%;height:17%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at center,rgba(117,155,182,.15),transparent 68%);filter:blur(18px)}
 .about::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(252,252,249,.76) 0%,rgba(248,251,252,.68) 50%,rgba(239,247,250,.42) 78%,rgba(232,242,248,.2) 100%)}

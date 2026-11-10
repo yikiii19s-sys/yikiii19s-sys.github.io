@@ -5,39 +5,12 @@
 <meta name="description" content="Sylvia 韩祎飒 — DREAM BEYOND REALITY · AIGC 创意作品集，电影感数字艺术展">
 <title>Sylvia 韩祎飒 — DREAM BEYOND REALITY</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 64 64&#39;%3E%3Crect width=&#39;64&#39; height=&#39;64&#39; rx=&#39;12&#39; fill=&#39;%238CA3B6&#39;/%3E%3Ctext x=&#39;32&#39; y=&#39;46&#39; font-family=&#39;Georgia,serif&#39; font-size=&#39;40&#39; fill=&#39;%23F6F8FA&#39; text-anchor=&#39;middle&#39;%3ES%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" media="(min-width:641px), (orientation:landscape)" fetchpriority="high">
 <link rel="preload" href="assets/css2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=mobile-portrait-3">
+<link rel="stylesheet" href="assets/css/main.css?v=mobile-portrait-4">
 <link rel="stylesheet" href="assets/css/portfolio-return.css"></head>
 <body>
-<aside class="landscape-gate" id="landscapeGate" aria-labelledby="landscapeGateTitle">
-  <div class="landscape-gate-phone" aria-hidden="true"><i></i></div>
-  <p>LANDSCAPE EXPERIENCE</p>
-  <h2 id="landscapeGateTitle">请横屏观看</h2>
-  <span>关闭方向锁定后将手机横过来，<br>页面会自动进入完整横版。</span>
-  <div class="landscape-wechat-tip" id="landscapeWechatTip" hidden>
-    微信内无法可靠切换横屏。请点击右上角 ···，选择“在浏览器打开”。
-  </div>
-  <button class="landscape-gate-skip" type="button" id="landscapeGateSkip">继续竖屏浏览</button>
-</aside>
-<script>
-(function(){
-  var gate=document.getElementById("landscapeGate");
-  var skip=document.getElementById("landscapeGateSkip");
-  var wechatTip=document.getElementById("landscapeWechatTip");
-  if(!gate||!skip||!wechatTip) return;
-  if(/MicroMessenger/i.test(navigator.userAgent)){
-    gate.classList.add("is-wechat");
-    wechatTip.hidden=false;
-  }
-  if(sessionStorage.getItem("portfolio-portrait-ok")==="1") gate.classList.add("is-skipped");
-  skip.addEventListener("click",function(){
-    sessionStorage.setItem("portfolio-portrait-ok","1");
-    gate.classList.add("is-skipped");
-  });
-})();
-</script>
 <div class="grain" aria-hidden="true"></div>
 <div class="vignette" aria-hidden="true"></div>
 
@@ -59,7 +32,7 @@
   <section class="hero" id="hero">
     <div class="hero-portrait" id="heroPortrait" aria-hidden="true">
       <picture>
-        <source media="(max-width:640px) and (orientation:portrait)" srcset="assets/sylvia-hero-222-v1.jpg">
+        <source media="(max-width:640px) and (orientation:portrait)" srcset="assets/sylvia-hero-222-v1.jpg?v=2">
         <img src="assets/sylvia-hero-111-v1.jpg" alt="雾蓝光束中的银白长发女性，蕾丝花叶面饰半掩面容，白色轻纱垂落" fetchpriority="high">
       </picture>
     </div>
@@ -74,7 +47,10 @@
       </div>
     </div>
     <div class="hero-foreground" aria-hidden="true">
-      <img src="assets/sylvia-hero-person-cutout-v2.webp" alt="" decoding="async" fetchpriority="high">
+      <picture>
+        <source media="(min-width:641px), (orientation:landscape)" srcset="assets/sylvia-hero-person-cutout-v2.webp">
+        <img alt="" decoding="async" fetchpriority="high">
+      </picture>
     </div>
     <div class="hero-scroll" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i></i></div>
     <a class="hero-selected" id="heroSelected" href="#/film" data-jump="worlds">SELECTED WORKS ↓ <b>01—08</b></a>

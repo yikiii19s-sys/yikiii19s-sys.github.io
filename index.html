@@ -7,12 +7,13 @@
 <script>document.documentElement.classList.add('hero-font-pending');</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 64 64&#39;%3E%3Crect width=&#39;64&#39; height=&#39;64&#39; rx=&#39;12&#39; fill=&#39;%238CA3B6&#39;/%3E%3Ctext x=&#39;32&#39; y=&#39;46&#39; font-family=&#39;Georgia,serif&#39; font-size=&#39;40&#39; fill=&#39;%23F6F8FA&#39; text-anchor=&#39;middle&#39;%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/BodoniModa-VariableFont_opsz-wght.ttf" as="font" type="font/ttf" crossorigin fetchpriority="high">
-<link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" media="(min-width:641px), (orientation:landscape)" fetchpriority="high">
-<link rel="preload" href="assets/sylvia-hero-111-v1.jpg" as="image" type="image/jpeg" media="(min-width:641px), (orientation:landscape)" fetchpriority="high">
+<link rel="preload" href="assets/sylvia-hero-person-cutout-v2.webp" as="image" type="image/webp" media="(max-width:1199px) and (orientation:landscape), (min-width:641px) and (max-width:1199px)" fetchpriority="high">
+<link rel="preload" href="assets/sylvia-hero-111-v1.jpg" as="image" type="image/jpeg" media="(max-width:1199px) and (orientation:landscape), (min-width:641px) and (max-width:1199px)" fetchpriority="high">
+<link rel="preload" href="assets/sylvia-hero-desktop-hq-v3.jpg" as="image" type="image/jpeg" media="(min-width:1200px)" fetchpriority="high">
 <link rel="preload" href="assets/sylvia-hero-222-v1.jpg?v=2" as="image" type="image/jpeg" media="(max-width:640px) and (orientation:portrait)" fetchpriority="high">
 <link rel="stylesheet" href="assets/css2" media="print" fetchpriority="low" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="assets/css2"></noscript>
-<link rel="stylesheet" href="assets/css/main.css?v=performance-4">
+<link rel="stylesheet" href="assets/css/main.css?v=performance-5">
 <link rel="stylesheet" href="assets/css/portfolio-return.css">
 <script>
   (function(){
@@ -48,6 +49,7 @@
     <div class="hero-portrait" id="heroPortrait" aria-hidden="true">
       <picture>
         <source media="(max-width:640px) and (orientation:portrait)" srcset="assets/sylvia-hero-222-v1.jpg?v=2">
+        <source media="(min-width:1200px)" srcset="assets/sylvia-hero-desktop-hq-v3.jpg">
         <img src="assets/sylvia-hero-111-v1.jpg" alt="雾蓝光束中的银白长发女性，蕾丝花叶面饰半掩面容，白色轻纱垂落" fetchpriority="high">
       </picture>
     </div>
@@ -67,6 +69,7 @@
     </div>
     <div class="hero-foreground" aria-hidden="true">
       <picture>
+        <source media="(min-width:1200px)" srcset="assets/sylvia-hero-desktop-hq-v3.jpg">
         <source media="(min-width:641px), (orientation:landscape)" srcset="assets/sylvia-hero-person-cutout-v2.webp">
         <img alt="" decoding="async" fetchpriority="high">
       </picture>

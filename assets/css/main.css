@@ -1,5 +1,6 @@
 
-@font-face{font-family:"Sylvia Bodoni Moda";src:url("../BodoniModa-VariableFont_opsz-wght.ttf") format("truetype");font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:"Sylvia Bodoni Moda";src:url("../BodoniModa-VariableFont_opsz-wght.ttf") format("truetype");font-style:normal;font-weight:100 900;font-display:block}
+html.hero-font-pending .hero-name,html.hero-font-pending .hero-tagline{visibility:hidden}
 /* ============ 设计系统：DREAM BEYOND REALITY ============ */
 :root{
   --fog-50:#EFF3F6; --fog-100:#E3E9EF; --fog-200:#CFDAE4; --fog-300:#B7C9D7;
